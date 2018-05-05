@@ -15,7 +15,7 @@
 </head>
 
 <body>
-Click a location on the map to add a question
+<h2>Click on the map to select the location of the question topic</h2>
 
 <!-- the mapid div will hold the map -->
 <div id="mapid" style="width: 600px; height: 400px;"></div>
@@ -39,13 +39,28 @@ var popup = L.popup();
 function onMapClick(e) {
 popup
 .setLatLng(e.latlng)
-.setContent("You clicked the map at " + e.latlng.toString())
+.setContent("Location: " + e.latlng.toString())
 .openOn(mymap);
 }
 // now add the click event detector to map
 mymap.on('click', onMapClick);
 
 </script>
+
+<h2> Enter your Question here </h2>
+
+<!--create entry form-->
+<div >
+
+<label for="location">Location:  </label><input type="text" size="50" id="location"/><br />
+<label for="question">Question:  </label><input type="text" size="100" id="question"/><br />
+<label for="correct">Correct Answer:  </label><input type="text" size="50" id="name"/><br />
+<label for="answer1">Answer 1:  </label><input type="text" size="50" id="name"/><br />
+<label for="answer2">Answer 2:  </label><input type="text" size="50" id="name"/><br />
+<label for="answer3">Answer 3:  </label><input type="text" size="50" id="name"/><br />
+
+<button id="startUpload" onclick="startDataUpload()">Submit</button>
+</div>
 
 </body>
 </html>
